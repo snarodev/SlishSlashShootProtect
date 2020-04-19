@@ -14,7 +14,6 @@ public class FlowController : MonoBehaviour
     public GameObject currentFlowTarget;
 
     EnemySpawner spawner;
-    CameraController cameraController;
     GameStateController gameStateController;
 
     public Animator anim;
@@ -93,7 +92,6 @@ public class FlowController : MonoBehaviour
                 go.transform.SetAsLastSibling();
             }
             inFlowMeter.SetActive(true);
-            //keyParent.GetChild(0).GetComponent<FlowKey>().SetActiveFlowKey();
             comboText.gameObject.SetActive(true);
             playerHealthBar.SetActive(false);
             comboText.ResetCombo();
@@ -137,7 +135,6 @@ public class FlowController : MonoBehaviour
 
         Destroy(keyParent.GetChild(0).gameObject);
 
-        //keyParent.GetChild(0).GetComponent<FlowKey>().SetActiveFlowKey();
         currentFlowAmount += flowReplenishment;
 
         currentFlowAmount = Mathf.Min(currentFlowAmount, maxFlowAmount);
